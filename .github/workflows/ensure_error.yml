@@ -5,7 +5,8 @@ on:
   push:
     paths:
       [
-        "**.swift"
+        "**.swift",
+        ".github/workflows/ensure_error.yml"
       ]
 
 jobs:
@@ -17,4 +18,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
+      - uses: sushichop/gha-swift-env@v1
+        with:
+          swift-version: '5.7.2'
       - run: "swift build --use-integrated-swift-driver"
