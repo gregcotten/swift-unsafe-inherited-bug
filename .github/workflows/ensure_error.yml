@@ -1,0 +1,20 @@
+name: "Ensure Error"
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      [
+        "**.swift"
+      ]
+
+jobs:
+  build:
+    name: Build on ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v3
+      - run: "swift build --use-integrated-swift-driver"
