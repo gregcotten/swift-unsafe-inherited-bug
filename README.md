@@ -1,5 +1,7 @@
 # swift-unsafe-inherited-bug
 
+[Swift Issue](https://github.com/apple/swift/issues/62731)
+
 Passing an actor as a parameter to another actor causes an assertion error:
 
 `Assertion failed: SGF.ExpectedExecutor || SGF.unsafelyInheritsExecutor(), file D:\a\1\s\swift\lib\SILGen\SILGenProlog.cpp, line 880`
